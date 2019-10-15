@@ -1,2 +1,2 @@
-docker build -t lukebond/demo-api-redis .
-docker push lukebond/demo-api-redis
+docker build -t mansong/demo-api-redis .
+docker push mansong/demo-api-redis
