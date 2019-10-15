@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.6
+FROM alpine:latest
 
 RUN \
   apk --update add nodejs nodejs-npm python make g++ \
