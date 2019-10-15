@@ -3,14 +3,12 @@ node {
     checkout scm
   }
 
-  stage('Build') {
-    sh 'docker image build -t mansong/demo-api:latest .'
+  stage('Tests') {
+    sh 'npm test'
   }
 
-  stage('Tests') {
-    sh 'test/unit.sh'
-    sh 'test/test.sh'
-    sh 'test/functional.sh'
+  stage('Build') {
+    sh 'docker image build -t mansong/demo-api:latest .'
   }
 
   stage ('Scan') {
