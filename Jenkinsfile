@@ -11,6 +11,14 @@ node {
     
   }
 
+  stage ('Scan') {
+    aquaMicroscanner imageName: 'mansong/demo-api:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+  }
+
+  stage ('Analysis') {
+
+  }
+
   stage('Push') {
     withCredentials([
        usernamePassword(credentialsId: 'docker-credentials',
