@@ -8,7 +8,9 @@ node {
   }
 
   stage('Tests') {
-    
+    sh 'test/unit.sh'
+    sh 'test/test.sh'
+    sh 'test/functional.sh'
   }
 
   stage ('Scan') {
