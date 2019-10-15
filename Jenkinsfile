@@ -4,7 +4,7 @@ node {
   }
 
   stage('Tests') {
-    sh 'npm test'
+    
   }
 
   stage('Build') {
