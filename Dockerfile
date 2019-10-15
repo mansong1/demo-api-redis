@@ -8,6 +8,8 @@ RUN \
 WORKDIR /usr/src/app
 
 ADD ./package.json /usr/src/app/package.json
+
+RUN npm update
 RUN npm install
 
 ADD ./index.js /usr/src/app/
