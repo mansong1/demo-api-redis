@@ -4,7 +4,7 @@ node {
   }
 
   stage('Tests') {
-    
+
   }
 
   stage('Build') {
@@ -15,10 +15,6 @@ node {
     aquaMicroscanner imageName: 'mansong/demo-api:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
   }
 
-  stage ('Analysis') {
-
-  }
-
   stage('Push') {
     withCredentials([
        usernamePassword(credentialsId: 'docker-credentials',
@@ -27,6 +23,10 @@ node {
      sh 'docker login -p "${PASSWORD}" -u "${USERNAME}"'
      sh 'docker image push ${USERNAME}/demo-api:latest'
     }
+  }
+
+  stage ('Analysis') {
+    sh 'docker run -i kubesec/kubesec:latest scan /dev/stdin < deployment.yaml'
   }
 
   stage('Deploy') {
