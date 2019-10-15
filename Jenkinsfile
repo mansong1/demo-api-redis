@@ -26,7 +26,7 @@ node {
   }
 
   stage ('Analysis') {
-    sh 'docker run -i kubesec/kubesec scan /dev/stdin < deployment.yaml'
+    sh 'docker run -i kubesec/kubesec:c5a4ff5 scan /dev/stdin < deployment.yaml'
   }
 
   stage('Deploy') {
