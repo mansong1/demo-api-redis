@@ -7,6 +7,10 @@ node {
     sh 'docker image build -t mansong/demo-api:latest .'
   }
 
+  stage('Tests') {
+    
+  }
+
   stage('Push') {
     withCredentials([
        usernamePassword(credentialsId: 'docker-credentials',
