@@ -25,6 +25,6 @@
   "dependencies": {
     "ip": "^1.1.5",
     "redis": "^2.8.0",
-    "restify": "^8.4.0"
+    "restify": "^10.0.0"
   }
 }
